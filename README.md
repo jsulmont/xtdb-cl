@@ -21,14 +21,6 @@ $ ./xtdb-cl [name]
 Hello [name] from xtdb-cl
 ```
 
-## Roswell integration
-
-Roswell is an implementation manager and [script launcher](https://github.com/roswell/roswell/wiki/Roswell-as-a-Scripting-Environment).
-
-A POC script is in the roswell/ directory.
-
-Your users can install the script with `jsulmont/xtdb-cl`.
-
 # Dev
 
 Tests are defined with [Fiveam](https://common-lisp.net/project/fiveam/docs/).
@@ -72,4 +64,4 @@ On Slime, load the test package and run `run!`.
 
 ---
 
-Licence: BSD
+Licence: MIT
