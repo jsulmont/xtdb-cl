@@ -1,27 +1,41 @@
 (in-package :xtql)
 (use-package :parseq)
 
-;;====== utilities
-;; ok
+(serapeum:toggle-pretty-print-hash-table)
+
+;;====== utilities ;; ok
 (defrule this-kw (kw) keyword
   (:test (x) (eql x kw)))
 
-(defun plistp (x)
+(defun symbol-not-keyword-p (obj)
+  "Check if OBJ is a symbol but not a keyword."
+  (and (symbolp obj) (not (keywordp obj))))
+
+(defun plistp (x &optional (kind :keyword))
   "Checks if all keys in a property list are keywords."
   (loop for (key value) on x by #'cddr
-        always (keywordp key)))
+        always (if (eql kind :keyword)
+                   (keywordp key)
+                   (symbol-not-keyword-p key))))
 
-(defrule plist () list
+(defrule posintp () number
+  (:test (x) (and (integerp x) (> x 0))))
+
+(defrule plist-keyword () list
   (:test (&rest x) (plistp x))
   (:function (lambda (&rest x) (alex:plist-hash-table x))))
 
+(defrule plist-symbol () list
+  (:test (&rest x) (plistp x :symbol))
+  (:function (lambda (&rest x) (alex:plist-hash-table x))))
+
+(parseq 'plist-keyword'((a 1 b 2)))
 
 ;; === === Expression
 ;;
-(defrule ScalarExpr ()
-    (or number
-        string
-        t nil))
+(defrule ScalarExpr () atom)
+
+(defrule SymbolExpr () symbol)
 
 (defrule VectorExpr ()
     (vector (* Expr))
@@ -29,34 +43,36 @@
 
 (defrule SetExpr ()
     (list (* Expr))
-  )
+  (:function
+   (lambda (x) (fset:convert 'fset:set x))))
 
-(defrule CallExpr ()
-    (and symbol (* Expr)))
+;; TODO GetFieldExpr &  CallExpr
+;; (defrule CallExpr ()
+;;     (and SymbolExpr (* Expr)))
+;; (defrule GetFieldExpr ()
+;;     (and 'dot Expr SymbolExpr))
+
+
 
 (defrule Expr ()
-    (or ScalarExpr
-        VectorExpr
-        SetExpr
-        CallExpr
-        ))
+    (or
+     ;; SubQueryExpr
+     ;; ExistsExpr
+     ;; PullExpr
+     ;; PullManyExpr
+     ;; GetFieldExpr
+     ;; CallExpr
+     VectorExpr
+     SetExpr
+     SymbolExpr
+     ScalarExpr))
 
-(trace-rule 'CallExpr :recursive t)
-(trace-rule 'Expr :recursive t)
-(trace-rule 'VectorExpr :recursive t)
-(trace-rule 'ScalarExpr :recursive t)
-(trace-rule 'SetExpr :recursive t)
+(parseq 'Expr `(( (dot ,(+ 1 2) lola) 1)))
 
 
-(parseq 'CallExpr `(lola #(1 2 3)))
 
-(parseq 'Expr '(#("a" 1 t #(2 3))))
 
 (parseq 'SetExpr '((1 2 3)) :parse-error t)
-
-(defrule xv () vector)
-
-(parseq  'xv '((1 2)) )
 
 ;;====== Temporal
 ;;OK
@@ -82,7 +98,7 @@
 ;;====== BindSpec
 ;; OK
 (defrule BindSpec ()
-    (or symbol plist))
+    (or symbol plist-keyword))
 
 (defrule BindSpecVec ()
     (vector (+ BindSpec))
@@ -127,4 +143,137 @@
 (defrule Rel ()
     (and 'rel Expr BindSpecVec))
 
-(parseq 'Rel `(rel ,(+ 1 2 3) #(a)))
+(parseq 'Rel `(rel  ,(+ 1 2 3) #(a)))
+
+(parseq 'Rel `(rel ,(+ 1 2) ,(vect '(:x 1 :b 2) '(:a 3 :b 4))))
+
+
+
+;;====== Tail Operators
+;;
+(defrule Limit () (list 'limit posintp))
+
+(defrule Offset () (list 'offset posintp))
+
+(defrule OrderSpecMap () list
+  (:test (&rest plist)
+         (when (plistp plist)
+           (let ((val (getf plist :val))
+                 (dir (getf plist :dir))
+                 (nulls (getf plist :nulls)))
+             (and val (atom val) ;; TODO must be an atom for now :?
+                  (if dir (member dir '(:asc :desc)) t)
+                  (if nulls (member nulls '(:first :last)) t)))))
+  (:function (lambda (&rest x) (alex:plist-hash-table x))))
+
+(defrule OrderSpec ()
+    (or symbol OrderSpecMap))
+
+(defrule OrderBy ()
+    (list 'order-by (+ OrderSpec))
+  (:flatten))
+
+(defrule ReturnSpec ()
+    (or symbol plist-keyword))
+
+(defrule Return ()
+    (list 'return (+ ReturnSpec))
+  (:flatten))
+
+(defrule Where ()
+    (list 'where (* Expr))
+  (:flatten))
+
+(defrule WithSpec ()
+    (or symbol plist-keyword))
+
+(defrule With ()
+    (list 'with (* WithSpec))
+  (:flatten))
+
+(defrule WithSpecUnify ()
+    (or symbol plist-symbol))
+
+(defrule WithUnify ()
+    (list 'with (* WithSpecUnify))
+  (:flatten))
+
+(parseq 'With '((with (:a  1))))
+
+;; ====== Joins
+;;
+(defrule JoinOptsMap () list
+  (:test (&rest plist)
+         (when (plistp plist)
+           (let ((bind (getf plist :bind))
+                 (args (getf plist :args))              )
+             (and (vectorp bind)
+                  (if args (vectorp args) t)))))
+  (:function (lambda (&rest x) (alex:plist-hash-table x))))
+
+(defrule JoinOpts ()
+    (or BindSpecVec JoinOptsMap))
+
+(defrule Join ()
+    (and 'join Query JoinOpts)
+  (:flatten))
+
+(defrule LeftJoin ()
+    (and 'lef-join Query JoinOpts)
+  (:flatten))
+
+(parseq 'Join `(join ))
+
+;; ====== Unify
+;;
+(defrule UnifyClause  ()
+    (or From Join LeftJoin Rel Where With))
+
+(defrule Unify ()
+    (and 'unify (+ UnifyClause))
+  (:flatten))
+
+(parseq 'UnifyClause
+        `(rel ,(+ 1 2) ,(vect '(:x 1 :b 2) '(:a 3 :b 4)))
+        )
+
+(parseq 'Unify
+        `(unify  (rel ,(+ 1 2) ,(vect '(:x 1 :b 2) '(:a 3 :b 4)))))
+
+
+;; ====== Query
+;;
+(defrule SourceOp ()
+    (or From Rel Unify))
+
+(defrule TailOp ()
+    (or Limit Offset OrderBy Return Where With))
+
+(parseq 'TailOp '((limit 100)))
+
+(defrule xx ()
+    (* TailOp)
+  )
+
+(defrule Query ()
+    (and SourceOp (* TailOp)))
+
+(parseq 'Query `((rel ,(+ 1 2) ,(vect '(:x 1 :b 2) '(:a 3 :b 4)))
+                 (limit 100)              )
+        )
+
+(progn
+  (trace-rule 'SourceOp)
+  (trace-rule 'TailOp)
+  (trace-rule 'Query)
+  (trace-rule 'Unify)
+  (trace-rule 'Rel)
+  (trace-rule 'From)
+  (trace-rule 'Join)
+  (trace-rule 'LeftJoin)
+  (trace-rule 'CallExpr :recursive t)
+  (trace-rule 'SymbolExpr :recursive t)
+  (trace-rule 'Expr :recursive t)
+  (trace-rule 'VectorExpr :recursive t)
+  (trace-rule 'ScalarExpr :recursive t)
+  (trace-rule 'SetExpr :recursive t))

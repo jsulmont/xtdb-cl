@@ -14,9 +14,9 @@
    (#:lt #:local-time))
   (:export :main))
 
-(defpackage :xtql
-  (:use :cl :parseq)
-  (:import-from :serapeum :vect :dict :href :@)
-  (:local-nicknames
-   (#:alex #:alexandria)
-   (#:lt #:local-time)))
+;; (defpackage :xtql
+;;   (:use :cl :parseq)
+;;   (:import-from :serapeum :vect :dict :href :@)
+;;   (:local-nicknames
+;;    (#:alex #:alexandria)
+;;    (#:lt #:local-time)))
