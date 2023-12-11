@@ -1,8 +1,8 @@
 (in-package :xtdb-cl)
 
-(serapeum:toggle-pretty-print-hash-table)
+;;(serapeum:toggle-pretty-print-hash-table)
 
-;; (declaim (optimize (speed 3) (debug 0) (safety 0)))
+(declaim (optimize (speed 3) (debug 0) (safety 0)))
 
 (defparameter *headers*
   '(("Content-Type" . "application/transit+json")
@@ -63,7 +63,7 @@
 (defmethod status ((client xtdb-http-client))
   (with-slots (status-url) client
     (multiple-value-bind (body status)
-        (dex:get status-url)
+        (dex:get status-url :headers *headers*)
       (if (= 200 status)
           (clt:decode-json body)
           (error 'http-failed :status status)))))
@@ -137,6 +137,7 @@
 (defmethod submit-tx ((client xtdb-http-client) tx-ops &optional (opts (dict)))
   (declare (type sequence tx-ops)
            (type hash-table opts))
+  (ensure-local client)
   (let* ((content (-> (dict :|tx-ops| (coerce tx-ops 'vector)
                             :|opts| opts)
                       clt:encode-json))
@@ -144,12 +145,6 @@
                        :content content
                        :headers *headers* )))
     (clt:decode-json rc)))
-
-;; (let* ((now (lt:now))
-;;        (tx-ops (-> (put :|lola| (dict :|xt/id| 123 :name "lola"))
-;;                    (during now (lt:timestamp+ now 1 :month ))
-;;                    (vect))))
-;;   (submit-tx tx-ops))
 
 (defun edn-string (form)
   (labels ((f (acc form)
@@ -198,7 +193,7 @@
                      (jzon:parse s :allow-multiple-content t))))))
 
 
-(defun build-query (query basis basis-timeout args default-all-valid-time? default-tz)
+(defun build-query (query basis basis-timeout after-tx args default-all-valid-time? default-tz)
   (let ((result (dict
                  :|query| (if (consp query)
                               (make-tagged-value '|xtdb/list| (edn-string query))
@@ -209,6 +204,9 @@
     (when basis-timeout
       (setf result (merge-hash-tables
                     result (dict :|basis-timeout| basis-timeout))))
+    (when after-tx
+      (setf result (merge-hash-tables
+                    result (dict :|after-tx| after-tx))))
     (when args
       (setf result (merge-hash-tables
                     result (dict :|args| args))))
@@ -222,14 +220,53 @@
     result))
 
 (defmethod query ((client xtdb-http-client) query
-                  &key basis basis-timeout args default-all-valid-time? default-tz )
+                  &key basis basis-timeout after-tx args default-all-valid-time? default-tz )
   (check-type query (or cons string))
-  (let* ((q (build-query query basis basis-timeout args default-all-valid-time? default-tz))
+  (let* ((q (build-query query basis basis-timeout after-tx args default-all-valid-time? default-tz))
          (content (clt:encode-json q)))
     (multiple-value-bind (body status)
         (dex:post (query-url client) :content content :headers *headers*)
       (when (= 200 status)
         (decode-body body)))))
 
-(let ((node (make-xtdb-http-client "http://localhost:3000")))
-  (query node *q9*))
+;; (let ((node (make-xtdb-http-client "http://localhost:3000")))
+;;   (query node *q9*))
+
+
+(defun read-args (argv)
+  (let ((url "http://localhost:3000")
+        (table :foobar))
+    (when (plusp (length argv))
+      (setf table (intern (string-left-trim ":" (first argv)) :keyword)))
+    (when (> (length argv) 1)
+      (setf url (cadr argv)))
+    (values table url)))
+
+(defun %main (argv)
+  (multiple-value-bind (table url)
+      (read-args argv)
+    (let ((node (make-xtdb-http-client "http://localhost:3000"))      )
+      (format t "-->url: ~a  table: ~a ~%" url table)
+      (loop
+        for count from 1 upto 10000
+        do (let* ((xt/id (uuid:make-v4-uuid))
+                  (tx-key (submit-tx
+                           node
+                           (-> (put table (dict :|xt/id| xt/id
+                                                :|user-id| (uuid:make-v4-uuid)
+                                                :|text| "yeayayaya"))
+                               (vect))))
+                  (rc (query node
+                             `(-> (from ,table ,(vect 'xt/id 'user-id 'text))
+                                  (where (= xt/id $id)))
+                             :args (dict 'id  xt/id)
+                             :after-tx tx-key)))
+             (assert (and (= 1 (length rc))
+                          (uuid:uuid= xt/id (href (car rc) :|xt/id|))))
+             (sleep 0.005)
+             (when (= 0 (mod count 10))
+               (format t "--> count=~a~%" count)))))))
+
+(defun main ()
+  (%main (uiop:command-line-arguments)))
+

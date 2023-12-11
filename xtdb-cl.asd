@@ -26,5 +26,6 @@
                              (:file "tpch")
                              (:file "xtdb-cl"))))
   :build-operation "program-op"
-  ;;:build-pathname "xtdb-cl"
+  :build-pathname "xtdb-cl"
+  :entry-point "xtdb-cl:main"
   )
