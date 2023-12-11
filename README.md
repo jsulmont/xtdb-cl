@@ -14,7 +14,7 @@ Developped by [Juxt](https://www.juxt.pro/):
  * Some support for Postgrew wire protocol
  
 Currently the only HTTP client released is written in Clojure.
-This projects open the door to non JVM based languages clients, Rust being next in line.
+This projects open the door to non JVM based languages clients, Rust (with a C binding) being next in line.
 
 ## API 
 * Closely maps Clojure's version:
