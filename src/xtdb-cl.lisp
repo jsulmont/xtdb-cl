@@ -229,10 +229,6 @@
       (when (= 200 status)
         (decode-body body)))))
 
-;; (let ((node (make-xtdb-http-client "http://localhost:3000")))
-;;   (query node *q9*))
-
-
 (defun read-args (argv)
   (let ((url "http://localhost:3000")
         (table :foobar))
@@ -270,3 +266,12 @@
 (defun main ()
   (%main (uiop:command-line-arguments)))
 
+;; (defparameter *node* (make-xtdb-http-client "http://localhost:3000"))
+;; ;; Q1 Q2 Q9
+;; (query *node* *q9*)
+
+
+;; (status *node*)
+;; |a|
+;; (eql :x :|x|)
+;; :x

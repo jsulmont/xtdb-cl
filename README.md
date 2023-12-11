@@ -1,6 +1,21 @@
 # xtdb-cl
 
-CL client for XTDB v2
+Common Lisp client for [XTDB 2.x](https://xtdb.com/v2). 
+
+
+## About XTDB 2.x
+
+Developped by [Juxt](https://www.juxt.pro/):
+
+ * Mostly Clojure (runs on the JVM).
+ * Based on [Apache Arrow ](https://arrow.apache.org/)
+ * [HTAP](https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing)
+ * Native support for both SQL-2011 and XQTL (inspired from Datalog and relational algebra).
+ * Accessible from over HTTP (MIME type `application/transit+json`
+ * Some support for Postgrew wire protocol
+ 
+Currently the only HTTP client released is written in Clojure.
+This projects open the door to non JVM based languages
 
 # Usage
 
