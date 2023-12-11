@@ -66,7 +66,7 @@ Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb
 This library is still a WIP but will be released to QuickLisp soon. 
 It relies on a recent version of [cl-transit](https://github.com/jsulmont/cl-transit) not yet picked up by Quicklist. Untill then, just clone `cl-transit` in your local projects e.g.,:
 ``` Shell
-   git clone https://github.com/jsulmont/cl-transit ~/quicklisp/local-projects
+$ git clone https://github.com/jsulmont/cl-transit ~/quicklisp/local-projects
 ```
 For now, you can use the library from a REPL (e.g., Emacs):
 
@@ -77,13 +77,15 @@ For now, you can use the library from a REPL (e.g., Emacs):
 
 
 ### binary
+Although meant as a library, the Makefile allows to build a binary, which assuming you have an [XTDB 2.x instance running on your laptop](https://docs.xtdb.com/reference/main/installation), will loop each iteration inserting a new document, fetching it, sleep for 5ms. 
+This code (and other) will move to a dedicated Package.
 ```
 $ make build
-$ ./xtdb-cl [name]
-Hello [name] from xtdb-cl
+$ ./xtdb-cl 
+
 ```
 
-# Dev
+# Dev (no test yet 🤦)
 
 Tests are defined with [Fiveam](https://common-lisp.net/project/fiveam/docs/).
 
