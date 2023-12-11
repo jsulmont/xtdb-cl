@@ -9,7 +9,7 @@ Developped by [Juxt](https://www.juxt.pro/):
  * Mostly Clojure (runs on the JVM).
  * Based on [Apache Arrow ](https://arrow.apache.org/)
  * [HTAP](https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing)
- * Native support for both SQL-2011 and XQTL (inspired from Datalog and relational algebra).
+ * Native support for both SQL-2011 and XTQL (inspired from Datalog and relational algebra).
  * Accessible from over HTTP (MIME type `application/transit+json`
  * Some support for Postgrew wire protocol
  
@@ -40,7 +40,7 @@ This projects open the door to non JVM based languages clients, Rust (with a C b
 
 ## XTDB queries
 Obviously, Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
-Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
+Here is how the XTQL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
 ``` Common Lisp
 `(-> (unify (from :part ,(vect (dict :xt/id 'p) 'p-mfgr (dict  :p-size 15) 'p-type))
               (where (like p-type "%BRASS"))
