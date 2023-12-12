@@ -11,7 +11,7 @@ Developped by [Juxt](https://www.juxt.pro/):
  * [HTAP](https://en.wikipedia.org/wiki/Hybrid_transactional/analytical_processing)
  * Native support for both SQL-2011 and XQTL (inspired from Datalog and relational algebra).
  * Accessible from over HTTP (MIME type `application/transit+json`).
- * Some support for Postgrew wire protocol.
+ * Some support for Postgres wire protocol.
 
 Currently the only HTTP client released is written in Clojure.
 This projects open the door to non JVM based languages clients, Rust (with a C binding) being next in line.
