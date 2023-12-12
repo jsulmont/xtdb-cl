@@ -146,7 +146,7 @@ For now, you can use the library from a REPL (e.g., Emacs):
 
 
 ### binary
-Although meant as a library, the Makefile allows to build a binary, which assuming you have an [XTDB 2.x instance running on your laptop](https://docs.xtdb.com/reference/main/installation), will loop each iteration inserting a new document, fetching it, sleep for 5ms. 
+Although meant as a library, the Makefile allows to build a binary, which assuming you have an [XTDB 2.x instance] servicing `localhost:3000` (https://docs.xtdb.com/reference/main/installation), will loop each iteration inserting a new document, fetching it, sleep for 5ms. 
 This code (and other) will move to a dedicated Package.
 ```
 $ make build
