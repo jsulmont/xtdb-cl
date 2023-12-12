@@ -97,6 +97,40 @@ Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb
        (order-by ,(dict :val 's-acctbal :dir :desc) n-name s-name p)
        (limit 100))
 ```
+Given XTDB 2.x loaded with a [0.05 TCPH dataset](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch.clj#L64-L78), would return (17) documents:
+```Common Lisp
+((DICT
+    :|r| "regionkey_3"
+    :|s-phone| "17-290-812-8855"
+    :|s-address| "F4Uy ZQNU6ESTmO3mrL,mI"
+    :|p-type| "ECONOMY PLATED BRASS"
+    :|s-name| "Supplier#000000135"
+    :|n| "nationkey_7"
+    :|p-mfgr| "Manufacturer#2"
+    :|n-name| "GERMANY"
+    :|s| "suppkey_135"
+    :|s-acctbal| 9767.99d0
+    :|s-comment| "courts wake slyly instructions. furiously silent requests cajol"
+    :|p| "partkey_1634"
+    :|ps-supplycost| 372.29d0)
+
+    ;; ....
+  (DICT
+    :|r| "regionkey_3"
+    :|s-phone| "17-617-724-5874"
+    :|s-address| "ZutN4kNIsv7sPWIV9,7"
+    :|p-type| "STANDARD ANODIZED BRASS"
+    :|s-name| "Supplier#000000212"
+    :|n| "nationkey_7"
+    :|p-mfgr| "Manufacturer#2"
+    :|n-name| "GERMANY"
+    :|s| "suppkey_212"
+    :|s-acctbal| -335.47d0
+    :|s-comment| "ular requests cajole furiously against the spe"
+    :|p| "partkey_3080"
+    :|ps-supplycost| 575.75d0
+   ) )    
+```
 ## Installation
 This library is still a WIP but will be released to QuickLisp soon. 
 It relies on a recent version of [cl-transit](https://github.com/jsulmont/cl-transit) not yet picked up by Quicklist. Untill then, just clone `cl-transit` in your local projects e.g.,:
@@ -120,7 +154,7 @@ $ ./xtdb-cl
 
 ```
 
-# Dev (no test yet 🤦)
+# Dev (no test yet)
 
 Tests are defined with [Fiveam](https://common-lisp.net/project/fiveam/docs/).
 
