@@ -38,9 +38,43 @@ Note that a JSON API with JSON-LD is being worked on and this library might swit
                (uuid:uuid= xt/id (href (car rc) :|xt/id|))))
   rc)
 ```
-
+returning something like:
+```Common Lisp
+ ((DICT
+   :|user-id| C25E1960-2BCD-4F6B-9570-924434556033
+   :|name| "John Doe"
+   :|xt/id| E6DD10F4-1B65-4193-AA59-47236CD464F9))      
+```
 ## XTDB queries
-Obviously, Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
+### SQL
+SQL statements are transmitted as strings to the server. Hence the code snippet above would become:
+```Common Lisp
+(let* ((table :|users|)
+       (node (make-xtdb-http-client "http://localhost:3000"))
+       (xt/id (uuid:make-v4-uuid))
+       (tx-key (submit-tx node
+                          (-> (put table (dict :|xt/id| xt/id
+                                               :|user-id| 123456
+                                               :|name| "John Doe"))
+                              (vect))))
+       (rc (query node
+                  "select u.* from users u where u.xt$id = ?"
+                  :args (vect xt/id)
+                  :after-tx tx-key)))
+  (assert (and (= 1 (length rc)) (uuid:uuid= xt/id (href (car rc) :|xt$id|))))
+  rc)       
+```
+returning something like:
+```Common Lisp
+((DICT
+   :|user_id| 123456  ;; :user-id -> :user_id 
+   :|name| "John Doe" 
+   :|xt$id| F911B6AC-9581-4614-A799-A6961E0D2618)) ;; :xt/id -> :xt$id
+```
+
+
+### XTQL
+Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
 Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
 ``` Common Lisp
 `(-> (unify (from :part ,(vect (dict :xt/id 'p) 'p-mfgr (dict  :p-size 15) 'p-type))
