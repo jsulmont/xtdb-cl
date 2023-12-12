@@ -46,7 +46,7 @@ returning something like:
    :|xt/id| E6DD10F4-1B65-4193-AA59-47236CD464F9))      
 ```
 ## XTDB queries
-Obviously, Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
+Common Lisp doesn't have most of the syntactic suggars Clojure added; we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
 Here is how the XTQL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
 ### SQL
 SQL statements are transmitted as strings to the server. Hence the code snippet above would become:
@@ -99,7 +99,7 @@ Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb
        (order-by ,(dict :val 's-acctbal :dir :desc) n-name s-name p)
        (limit 100))
 ```
-Given XTDB 2.x loaded with a [0.05 TCPH dataset](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch.clj#L64-L78), would return (17) documents:
+Given XTDB 2.x loaded with a [TCPH dataset](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch.clj#L64-L78) at factor 0.05, the query above would return (17) documents:
 ```Common Lisp
 ((DICT
     :|r| "regionkey_3"
@@ -134,6 +134,8 @@ Given XTDB 2.x loaded with a [0.05 TCPH dataset](https://github.com/xtdb/xtdb/bl
    ) )    
 ```
 ## Installation
+
+
 This library is still a WIP but will be released to QuickLisp soon. 
 It relies on a recent version of [cl-transit](https://github.com/jsulmont/cl-transit) not yet picked up by Quicklist. Untill then, just clone `cl-transit` in your local projects e.g.,:
 ``` Shell
