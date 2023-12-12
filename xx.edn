@@ -1,0 +1,16 @@
+(pipeline (unify (from :part [{:xt/id p} p-mfgr {:p-size 15} p-type])
+                  (where (like p-type "%BRASS"))
+                  (from :partsupp [{:ps-partkey p, :ps-suppkey s} ps-supplycost])
+                  (from :supplier [{:xt/id s, :s-nationkey n}
+                                   s-acctbal s-address s-name s-phone s-comment])
+                  (from :nation [{:xt/id n, :n-regionkey r} n-name])
+                  (from :region [{:xt/id r, :r-name "EUROPE"}])
+                  (where (= ps-supplycost
+                            (q (-> (unify (from :partsupp [{:ps-partkey $p, :ps-suppkey s} ps-supplycost])
+                                          (from :supplier [{:xt/id s, :s-nationkey n}])
+                                          (from :nation [{:xt/id n, :n-regionkey r}])
+                                          (from :region [{:xt/id r, :r-name "EUROPE"}]))
+                                   (aggregate {:min-supplycost (min ps-supplycost)}))
+                               {:args [p]}))))
+           (order-by {:val s-acctbal, :dir :desc} n-name s-name p)
+           (limit 100))

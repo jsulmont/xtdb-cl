@@ -1,0 +1,43 @@
+#+TITLE: Bridging Common Lisp and Clojure
+#+AUTHOR: Jan Sulmont
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_TRANS: Slide
+#+REVEAL_THEME: black
+#+OPTIONS: num:nil
+
+* Welcome to Lisp: Common Lisp and Clojure
+** Introduction
+   - Objective: Explore efficiency in Common Lisp and its implications for Clojure developers.
+   - Common Ground: Shared Lisp heritage; functional programming aspects.
+   - Rich Hickey's Vision: Adapting Common Lisp principles for the JVM.
+
+** Common Lisp Overview
+   - A Storied History: From the 1950s to modern usage.
+   - Key Features: Dynamic typing, garbage collection, powerful macro system.
+   - Influence on Clojure: Setting the stage for Clojure's design on the JVM.
+
+** Efficiency in Common Lisp
+   - Memory Management: Efficient handling in Common Lisp.
+   - Performance Optimizations: Strategies for optimizing Common Lisp code.
+   - Resource Consumption Patterns: Managing resources in Lisp applications.
+   - Comparison with Clojure: Efficiency parallels and differences.
+
+** Object-Oriented Programming: Clojure vs. Common Lisp
+   - Clojure's Java Class Integration: Using Java OOP model.
+   - Common Lisp's CLOS: Dynamic, multiple dispatch object system.
+   - Comparative Insights: Flexibility, structure, and philosophical differences.
+
+** Rich Hickey's Stance on Immutability
+   - Simplifying Concurrent Programming: Eliminating concurrency issues.
+   - Predictable Code Behavior: Immutable data leads to fewer side effects.
+   - Performance and JVM Optimizations: Efficient persistent data structures.
+   - Functional Programming Emphasis: Core principle in Clojure's design.
+
+** Memory Management: CL vs. Clojure
+   - Common Lisp: Varies by implementation, manual tuning, mutable structures.
+   - Clojure: Inherits JVM management, immutability, persistent data structures.
+   - Comparative Insights: Efficiency types, garbage collection, control over memory.
+
+* Conclusion
+   - Closing Thoughts: Bridging Common Lisp and Clojure.
+   - Q&A Session: Open floor for discussions and questions.

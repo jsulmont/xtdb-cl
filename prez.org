@@ -1,0 +1,22 @@
+:REVEAL_PROPERTIES:
+#+OPTIONS: toc:nil num:nil html-postamble:nil ^:{} reveal_title_slide:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: serif
+:END:
+
+#+TITLE: example slideshow
+#+SUBTITLE: this is the subtitle
+#+AUTHOR: Alex Shroyer
+#+DATE: August 13, 2021
+
+
+* This is the first slide
+  It has some content
+* This is a second slide
+** It has sub-sections
+   these render as other slides
+** last sub-section
+   - you can navigate main sections using left/right
+   - or navigate sub-sections with up/down
+* The End
+  thanks!

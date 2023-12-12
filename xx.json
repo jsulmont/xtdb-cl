@@ -1,0 +1,1575 @@
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2489531.243900001
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2878462.723600002
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1352458.2558999995
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2204398.2677999996
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2022732.3616999993
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2671136.5005
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1966920.3662
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1812794.7414000004
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2025870.443
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1547989.7622000005
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2392953.9277999997
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2706298.0419999994
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1694200.8198
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1958458.3082
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2657932.9605000014
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2337236.7041000007
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2814357.4740999998
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1153370.2911
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1917591.3229000007
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2563042.9969
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  3409502.153700002
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1618591.7991000002
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1168097.6587999999
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1314050.0705
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1141359.3083
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2773326.4265999985
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  3472380.870799998
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2144861.042799999
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2918222.1047999985
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1884057.1953
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1134685.2253999999
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1934835.0978999992
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1520026.2354999997
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2028606.9486999996
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2178442.6871
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2050476.2922000005
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1077199.9708000002
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1134916.2728999995
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2112040.203199999
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2408572.0254999995
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1581897.7387000003
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  3052971.0893000015
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2346031.2152
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2315854.7567000003
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  3123683.2742
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2724073.0606999984
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2043749.2353999997
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2420503.1953
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2319619.3992999997
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1992350.4529000001
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1464988.5919
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2626752.577100001
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1824505.5052999998
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1889404.5462000007
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  3114285.8164999993
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1763851.6469000005
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1509620.3690000002
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2349752.7687999993
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2371197.187300001
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2220100.7541
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2475377.811
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  3316323.0006999983
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2416327.9104999998
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1668839.1465999996
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2509260.707000001
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2032421.8968000005
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1633311.7360999994
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1976040.353
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2340065.2776999995
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1126753.7899
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2315424.5451000007
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1370152.0475
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2145241.5360999997
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1656833.8474
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2253283.7214
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2096487.983
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2556828.6262999997
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1375592.2888999996
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1994811.2445
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1999652.8218000012
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2704042.9891000004
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2500735.6615999998
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2148248.381499999
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2566481.2424000003
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  3125794.573199996
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2306016.8357
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2029956.1321999994
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1288540.8062999998
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2222489.4976
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2459058.0133000007
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1684666.4015000004
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED STATES",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1160191.9036
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  902925.1752
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2522767.827099999
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1919899.9659999989
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1565856.9601999996
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2114868.6872999994
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1282428.5346999995
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1388400.3234000006
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2335406.2982000005
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2334314.1994000003
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1493634.0041999999
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1868090.371499999
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2698548.5060999985
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2064339.418
+]
+[
+  "^ ",
+  "~:nation",
+  "CHINA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  3156487.0621999986
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1674018.0751999996
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1681109.6923999996
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  967224.0306
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1365625.9396000002
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  3326835.1406000005
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2171215.0844999994
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2294893.113799999
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2190387.1112
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2177298.7910999996
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2216883.725399999
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1008992.8755999999
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  973036.3668999998
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1506289.5637999997
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1684349.9164
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1725449.9959
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1990911.181799999
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1705392.4183000007
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1974719.0649000003
+]
+[
+  "^ ",
+  "~:nation",
+  "KENYA",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2157477.4230000004
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1651219.3529999997
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1981995.1424999996
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2059746.232899999
+]
+[
+  "^ ",
+  "~:nation",
+  "FRANCE",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1355556.7835000004
+]
+[
+  "^ ",
+  "~:nation",
+  "EGYPT",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1365652.645699999
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2095171.9499000001
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1913916.5642999995
+]
+[
+  "^ ",
+  "~:nation",
+  "RUSSIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2725573.851599999
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1037369.7062
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2176531.7842999995
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1941672.7814000004
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2039946.0162
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1068852.9687000006
+]
+[
+  "^ ",
+  "~:nation",
+  "GERMANY",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  3154911.8574000006
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1407450.5431
+]
+[
+  "^ ",
+  "~:nation",
+  "INDONESIA",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2152714.6920000003
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2248528.3924000002
+]
+[
+  "^ ",
+  "~:nation",
+  "JORDAN",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1903057.966599999
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  2017112.2175999996
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  2209101.1510000005
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1744167.2741000007
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1993,
+  "~:sum-profit",
+  1790091.9322000006
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2704007.9379
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2124433.1295999996
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1349481.3505
+]
+[
+  "^ ",
+  "~:nation",
+  "ALGERIA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1749720.3642999995
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1204967.6288000003
+]
+[
+  "^ ",
+  "~:nation",
+  "ARGENTINA",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1399086.7138999999
+]
+[
+  "^ ",
+  "~:nation",
+  "BRAZIL",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1873929.7748999996
+]
+[
+  "^ ",
+  "~:nation",
+  "SAUDI ARABIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1600956.0747
+]
+[
+  "^ ",
+  "~:nation",
+  "INDIA",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  2442148.1571999993
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1997,
+  "~:sum-profit",
+  1597050.0114999996
+]
+[
+  "^ ",
+  "~:nation",
+  "MOZAMBIQUE",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2264528.1457999996
+]
+[
+  "^ ",
+  "~:nation",
+  "UNITED KINGDOM",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1390247.7679000006
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1678069.9101999996
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2482961.857
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAN",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2810926.423700001
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  944953.0735000002
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  2223937.0754999993
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  2791147.3876
+]
+[
+  "^ ",
+  "~:nation",
+  "MOROCCO",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  2176512.326100001
+]
+[
+  "^ ",
+  "~:nation",
+  "VIETNAM",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  2544534.7703000004
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  539071.6305999999
+]
+[
+  "^ ",
+  "~:nation",
+  "JAPAN",
+  "~:o-year",
+  1994,
+  "~:sum-profit",
+  1785199.8950999998
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1116625.6083
+]
+[
+  "^ ",
+  "~:nation",
+  "PERU",
+  "~:o-year",
+  1995,
+  "~:sum-profit",
+  1367027.6186000002
+]
+[
+  "^ ",
+  "~:nation",
+  "CANADA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1308439.2361999997
+]
+[
+  "^ ",
+  "~:nation",
+  "ROMANIA",
+  "~:o-year",
+  1996,
+  "~:sum-profit",
+  1435217.3974
+]
+[
+  "^ ",
+  "~:nation",
+  "ETHIOPIA",
+  "~:o-year",
+  1998,
+  "~:sum-profit",
+  1350306.8948999995
+]
+[
+  "^ ",
+  "~:nation",
+  "IRAQ",
+  "~:o-year",
+  1992,
+  "~:sum-profit",
+  1700384.7534999999
+]

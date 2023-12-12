@@ -46,13 +46,8 @@ returning something like:
    :|xt/id| E6DD10F4-1B65-4193-AA59-47236CD464F9))      
 ```
 ## XTDB queries
-<<<<<<< HEAD
 Obviously, Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
 Here is how the XTQL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
-||||||| 53c4cac
-Obviously, Common Lisp has none of Clojure syntactic suggars, and we chose not to introduce any (this is Lisp after all) but instead use some from  well established CL libs (e.g. [Serapeum](https://github.com/ruricolist/serapeum/blob/master/REFERENCE.md), [Fset](https://github.com/slburson/fset) etc).
-Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch/xtql.clj#L26-L45) can be written:
-=======
 ### SQL
 SQL statements are transmitted as strings to the server. Hence the code snippet above would become:
 ```Common Lisp
