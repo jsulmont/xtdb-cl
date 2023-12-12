@@ -99,7 +99,7 @@ Here is how the XQTL version of [Q2 from the TPCH suite](https://github.com/xtdb
        (order-by ,(dict :val 's-acctbal :dir :desc) n-name s-name p)
        (limit 100))
 ```
-Given XTDB 2.x loaded with a [0.05 TCPH dataset](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch.clj#L64-L78), would return (17) documents:
+Given XTDB 2.x loaded with a [TCPH dataset](https://github.com/xtdb/xtdb/blob/2.x/modules/datasets/src/main/clojure/xtdb/datasets/tpch.clj#L64-L78) at factor 0.05, the query above would return (17) documents:
 ```Common Lisp
 ((DICT
     :|r| "regionkey_3"
@@ -134,6 +134,8 @@ Given XTDB 2.x loaded with a [0.05 TCPH dataset](https://github.com/xtdb/xtdb/bl
    ) )    
 ```
 ## Installation
+
+
 This library is still a WIP but will be released to QuickLisp soon. 
 It relies on a recent version of [cl-transit](https://github.com/jsulmont/cl-transit) not yet picked up by Quicklist. Untill then, just clone `cl-transit` in your local projects e.g.,:
 ``` Shell
