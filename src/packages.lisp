@@ -1,4 +1,4 @@
-(defpackage :xtdb-cl
+(defpackage :xtdb
   (:use :cl)
   (:nicknames #:xt)
   (:import-from :serapeum :vect :dict :href :@)
@@ -14,9 +14,9 @@
    (#:lt #:local-time))
   (:export :main))
 
-;; (defpackage :xtql
-;;   (:use :cl :parseq)
-;;   (:import-from :serapeum :vect :dict :href :@)
-;;   (:local-nicknames
-;;    (#:alex #:alexandria)
-;;    (#:lt #:local-time)))
+(defpackage :xtdb/xtql
+  (:use :cl :parseq)
+  (:import-from :serapeum :vect :dict :href :@)
+  (:local-nicknames
+   (#:alex #:alexandria)
+   (#:lt #:local-time)))

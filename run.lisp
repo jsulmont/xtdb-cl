@@ -17,7 +17,7 @@ Another solution to run the app is to build and run a binary (see README).
 
 (ql:quickload "xtdb-cl")
 
-(in-package :xtdb-cl)
+(in-package :xtdb)
 (handler-case
     (main)
   (error (c)

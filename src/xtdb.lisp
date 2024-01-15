@@ -1,6 +1,6 @@
-(in-package :xtdb-cl)
+(in-package :xtdb)
 
-;;(serapeum:toggle-pretty-print-hash-table)
+(serapeum:toggle-pretty-print-hash-table)
 
 (declaim (optimize (speed 3) (debug 0) (safety 0)))
 
@@ -177,11 +177,17 @@
                            (setq acc (f acc value)))
                          form)
                 (setq acc (nconc acc (list "}"))))
+               (fset:wb-set
+                (setq acc (nconc acc (list "#{")))
+                (fset:image (lambda (e) (setq acc (f acc e))) form)
+                (setq acc (nconc acc (list "}"))))
                (t
                 (setq acc (nconc acc (list (prin1-to-string form))))))))
     (let ((rc '()))
       (setq rc (f rc form))
       (reduce (lambda (a b) (concatenate 'string a " " b)) rc :initial-value ""))))
+
+(edn-string (fset:set 1 2 3))
 
 (defun decode-body (body)
   (let ((input-string
@@ -229,46 +235,38 @@
       (when (= 200 status)
         (decode-body body)))))
 
-(defun read-args (argv)
-  (let ((url "http://localhost:3000")
-        (table :foobar))
-    (when (plusp (length argv))
-      (setf table (intern (string-left-trim ":" (first argv)) :keyword)))
-    (when (> (length argv) 1)
-      (setf url (cadr argv)))
-    (values table url)))
-
-(defun %main (argv)
-  (multiple-value-bind (table url)
-      (read-args argv)
-    (let ((node (make-xtdb-http-client "http://localhost:3000"))      )
-      (format t "-->url: ~a  table: ~a ~%" url table)
-      (loop
-        for count from 1 upto 10000
-        do (let* ((xt/id (uuid:make-v4-uuid))
-                  (tx-key (submit-tx
-                           node
-                           (-> (put table (dict :|xt/id| xt/id
-                                                :|user-id| (uuid:make-v4-uuid)
-                                                :|text| "yeayayaya"))
-                               (vect))))
-                  (rc (query node
-                             `(-> (from ,table ,(vect 'xt/id 'user-id 'text))
-                                  (where (= xt/id $id)))
-                             :args (dict 'id  xt/id)
-                             :after-tx tx-key)))
-             (assert (and (= 1 (length rc))
-                          (uuid:uuid= xt/id (href (car rc) :|xt/id|))))
-             (sleep 0.005)
-             (when (= 0 (mod count 10))
-               (format t "--> count=~a~%" count)))))))
 
 (defun main ()
-  (%main (uiop:command-line-arguments)))
+  (let* ((url "http://localhost:3000")
+         (table :users)
+         (node (make-xtdb-http-client url)))
+    (format t "-->url: ~a  table: ~a ~%" url table)
+    (loop
+      for count from 1 upto 10000
+      do (let* ((xt/id (uuid:make-v4-uuid))
+                (tx-key (submit-tx
+                         node
+                         (-> (put table (dict :|xt/id| xt/id
+                                              :|user-id| (uuid:make-v4-uuid)
+                                              :|text| "yeayayaya"))
+                             (vect))))
+                (rc (query node
+                           `(-> (from ,table ,(vect 'xt/id 'user-id 'text))
+                                (where (= xt/id $id)))
+                           :args (dict 'id  xt/id)
+                           :after-tx tx-key)))
+           (assert (and (= 1 (length rc))
+                        (uuid:uuid= xt/id (href (car rc) :|xt/id|))))
+           ;;(sleep 0.005)
+           (when (= 0 (mod count 10))
+             (format t "--> count=~a~%" count))))))
 
-;; (defparameter *node* (make-xtdb-http-client "http://localhost:3000"))
+
+;; (spit "/tmp/yy.tr" (clt:encode-json (query *node* *q9*)))
+
+(defparameter *node* (make-xtdb-http-client "http://localhost:3000"))
 ;; ;; Q1 Q2 Q9
-;; (query *node* *q9*)
+;;(-> (query *node* *q2*) (length))
 
 
 ;; (status *node*)

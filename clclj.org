@@ -1,11 +1,15 @@
-#+TITLE: Bridging Common Lisp and Clojure
-#+AUTHOR: Jan Sulmont
-#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
-#+REVEAL_TRANS: Slide
-#+REVEAL_THEME: black
-#+OPTIONS: num:nil
+:REVEAL_PROPERTIES:
+#+OPTIONS: toc:nil num:nil html-postamble:nil ^:{} reveal_title_slide:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: serif
+:END:
 
-* Welcome to Lisp: Common Lisp and Clojure
+#+TITLE: à tout seigneur tout honneur
+#+SUBTITLE: Common Lisp
+#+AUTHOR: Jan Sulmont
+#+DATE: December 13, 2023
+
+*  Common Lisp and Clojure
 ** Introduction
    - Objective: Explore efficiency in Common Lisp and its implications for Clojure developers.
    - Common Ground: Shared Lisp heritage; functional programming aspects.
@@ -37,6 +41,98 @@
    - Common Lisp: Varies by implementation, manual tuning, mutable structures.
    - Clojure: Inherits JVM management, immutability, persistent data structures.
    - Comparative Insights: Efficiency types, garbage collection, control over memory.
+
+
+
+* Object-Oriented Programming: Clojure vs. Common Lisp
+** Common Lisp
+#+BEGIN_SRC lisp
+;; Define the classes
+(defclass shape () ())
+(defclass circle (shape)
+  ((radius :accessor radius :initarg :radius :initform 0)))
+(defclass rectangle (shape)
+  ((width :accessor width :initarg :width :initform 0)
+   (height :accessor height :initarg :height :initform 0)))
+
+;; Contextes
+(defclass console-context () ())
+(defclass gui-context () ())
+
+;; Define the generic function
+(defgeneric draw (shape context))
+
+;; Multi Methods
+(defmethod draw ((s circle) (c console-context))
+  (format t "Drawing a circle with radius ~A on the console.~%" (radius s)))
+
+(defmethod draw ((s circle) (c gui-context))
+  (format t "Drawing a circle with radius ~A on the GUI.~%" (radius s)))
+
+(defmethod draw ((s rectangle) (c console-context))
+  (format t "Drawing a rectangle with width ~A and height ~A on the console.~%"
+          (width s) (height s)))
+
+(defmethod draw ((s rectangle) (c gui-context))
+  (format t "Drawing a rectangle with width ~A and height ~A on the GUI.~%"
+          (width s) (height s)))
+
+;; Usage
+(let ((c (make-instance 'circle :radius 5))
+      (r (make-instance 'rectangle :width 10 :height 20))
+      (console (make-instance 'console-context))
+      (gui (make-instance 'gui-context)))
+  (draw c console)
+  (draw r gui))
+
+#+END_SRC
+
+
+** Clojure
+ #+BEGIN_SRC clojure
+;; data structures
+(defrecord Circle [radius])
+(defrecord Rectangle [width height])
+
+(defrecord ConsoleContext [])
+(defrecord GUIContext [])
+
+;; data structures
+(defrecord Circle [radius])
+(defrecord Rectangle [width height])
+
+(defrecord ConsoleContext [])
+(defrecord GUIContext [])
+
+;; multi-methods
+(defmulti draw (fn [shape context] [(class shape) (class context)]))
+
+(defmethod draw [Circle ConsoleContext] [circle console]
+  (println (str "Drawing a circle with radius "
+                (:radius circle) " on the console.")))
+
+(defmethod draw [Circle GUIContext] [circle gui]
+  (println (str "Drawing a circle with radius "
+                (:radius circle) " on the GUI.")))
+
+(defmethod draw [Rectangle ConsoleContext] [rectangle console]
+  (println (str "Drawing a rectangle with width "
+                (:width rectangle) " and height "
+                (:height rectangle) " on the console.")))
+
+(defmethod draw [Rectangle GUIContext] [rectangle gui]
+  (println (str "Drawing a rectangle with width "
+                (:width rectangle) " and height "
+                (:height rectangle) " on the GUI.")))
+
+(let [circle (->Circle 5)
+      rectangle (->Rectangle 10 20)
+      console (->ConsoleContext)
+      gui (->GUIContext)]
+  (draw circle console)
+  (draw rectangle gui))
+
+  #+END_SRC
 
 * Conclusion
    - Closing Thoughts: Bridging Common Lisp and Clojure.

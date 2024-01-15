@@ -2,7 +2,7 @@
 
 (defsystem :xtdb-cl
   :name "xtdb-cl"
-  :author "Jan Sulmont <modality@pm.me>"
+  :author "Jan Sulmont <dev@janks.eu>"
   :version "0.0.1"
   :license "MIT"
   :description "CL client for XTDB 2.x"
@@ -18,14 +18,17 @@
                :arrow-macros
                :bordeaux-threads
                :com.inuoe.jzon
-               :uuid)
+               :uuid
+               :parseq)
   :serial t
   :components ((:module "src"
                 :serial t
                 :components ((:file "packages")
+                             (:file "xtdb")
                              (:file "tpch")
-                             (:file "xtdb-cl"))))
+                             ;;(:file "xtql")
+                             )))
   :build-operation "program-op"
   :build-pathname "xtdb-cl"
-  :entry-point "xtdb-cl:main"
+  :entry-point "xtdb:main"
   )

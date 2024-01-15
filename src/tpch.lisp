@@ -1,4 +1,4 @@
-(in-package :xtdb-cl)
+(in-package :xtdb)
 
 (defparameter *q1*
   `(-> (from
@@ -100,6 +100,27 @@
 
 ;;        (order-by supp-nation cust-nation l-year)))
 
+
+;; (def q9
+;;   '(-> (unify (from :part [{:xt/id p} p-name])
+;;               (where (like p-name "%green%"))
+
+;;               (from :orders [{:xt/id o} o-orderdate])
+
+;;               (from :lineitem [{:l-orderkey o, :l-suppkey s, :l-partkey p}
+;;                                l-quantity l-extendedprice l-discount])
+
+;;               (from :partsupp [{:ps-partkey p, :ps-suppkey s} ps-supplycost])
+
+;;               (from :supplier [{:xt/id s, :s-nationkey n}])
+;;               (from :nation [{:xt/id n, :n-name nation}]))
+
+;;        (with {:o-year (extract "YEAR" o-orderdate)})
+
+;;        (aggregate nation o-year
+;;                   {:sum-profit (sum (- (* l-extendedprice (- 1 l-discount))
+;;                                        (* ps-supplycost l-quantity)))})))
+
 (defparameter *q9*
   `(-> (unify (from :part ,(vect (dict :xt/id 'p) 'p-name))
               (where (like p-name "%green%"))
@@ -118,7 +139,7 @@
 
        (aggregate nation o-year
                   ,(dict :sum-profit '(sum (- (* l-extendedprice (- 1 l-discount))
-                                               (* ps-supplycost l-quantity)))))))
+                                            (* ps-supplycost l-quantity)))))))
 
 ;; (defparameter *q22*
 ;;   `(-> (from :customer #(c-phone c-acctbal))
